@@ -1,0 +1,7 @@
+docker pull tensorflow/serving
+
+pip install tensorflow-serving-api
+
+docker run -it -v D:\Portofolio\Money_Plant_Corp_Image_Classification\models:/models -p 8501:8501 --entrypoint /bin/bash tensorflow/serving
+
+tensorflow_model_server --rest_api_port=8501 --model_name=rps_model --model_base_path=/models/saved_model/
